@@ -1,0 +1,68 @@
+{% extends "lowheaddaminventory/base.html" %}
+{% load tethys_gizmos %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+    <h1>Project Proposal - Evacuation Least Cost Path App</h1>
+
+    <h2>Introduction</h2>
+      <p>The Utah Lowhead Dam Inventory App was made to create an updated inventory of lowhead dams in Utah. Lowhead dams are mostly inconspicuous dams that have a very small dropoff. The small dropoff creates a strong current which is called a backwash. Backwash can pose great danger to anyone who gets caught in it. The circular current will drag people under the water, possibly for many minutes, which can lead the person to be drowned. Below is a picture of a lowhead dam showing the area of backwashat lowhead dams.  </p>
+
+    <div id = 'pic'>
+    <img id = 'image1' src="https://ke-courses-production.s3.amazonaws.com/asset_files/production/2921/attachments/original/wr_lowhead_dam.jpg?1559564864" alt="Italian Trulli">
+    </div>
+
+    <h2>Why make an inventory?</h2>
+      <p>
+      Since lowhead dams are quite inconspicuous few states have an updated inventory of lowhead dams. Although professionals in water resources may have knowledge of where dams are, other agencies, like like water recreation offices, could use a lowhead dam inventory to take precautionary steps to prevent future accidents from occuring at lowhead dams.
+      </p>
+
+    <h2>How can you Help?</h2>
+
+      <p>
+      Anyone with knowledge of a location of a lowhead dam is instrumental in creating an accurate inventory. If you have knowledge of a lowhead dam you can use the app to add a location and description of the lowhead dam you know of. If you have knowledge of where a lowhead dam exists proceed to the "Add a Lowhead Dam" button found to the left.
+      <p>
+
+
+    <h2>Existing Dams</h2>
+      <p>The "Existing Lowhead Dams" button found to the left will lead you to a list of existing lowhead dams, and their description.</p>
+
+
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+  <!-- Example Modal -->
+  <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="help-modal-label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="help-modal-label">Example Modal</h5>
+        </div>
+        <div class="modal-body">
+          <p>You can add custom buttons to the app header using the <code>header_buttons</code> block. Use anchor/link tags for the button and wrap it in a div with the class <code>header-button</code>. For buttons with the gliphyicons, add the <code>glyphicon-button</code> class as well.</p>
+          <p>Ever have trouble using a modal in a Tethys app? Use the <code>after_app_content</code> block for modal content to allow them to function properly. See: <a href="https://getbootstrap.com/javascript/#modals">Bootstrap Modals</a></p>
+          <p>Add tooltips to any element by adding the <code>data-toggle</code>, <code>data-placement</code>, and <code>title</code> attributes to the button. See: <a href="https://getbootstrap.com/javascript/#tooltips">Bootstrap Tooltips</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block app_actions %}
+  {% gizmo save_button %}
+  {% gizmo edit_button %}
+  {% gizmo remove_button %}
+  {% gizmo previous_button %}
+  {% gizmo next_button %}
+{% endblock %}
