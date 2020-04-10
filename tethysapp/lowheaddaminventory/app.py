@@ -8,7 +8,7 @@ class Lowheaddaminventory(TethysAppBase):
 
     name = 'Utah Lowhead Dam Inventory App'
     index = 'lowheaddaminventory:home'
-    icon = 'lowheaddaminventory/images/icon.gif'
+    icon = 'lowheaddaminventory/images/dam.png'
     package = 'lowheaddaminventory'
     root_url = 'lowheaddaminventory'
     color = '#2c3e50'
@@ -29,6 +29,25 @@ class Lowheaddaminventory(TethysAppBase):
                 url='lowheaddaminventory',
                 controller='lowheaddaminventory.controllers.home'
             ),
+
+            UrlMap(
+                name='addlowheaddam',
+                url='addlowheaddam',
+                controller='lowheaddaminventory.controllers.addlowheaddam'
+            ),
+
+            UrlMap(
+                name='instructions',
+                url='instructions',
+                controller='lowheaddaminventory.controllers.instructions'
+            ),
+
+            UrlMap(
+                name='existingdams',
+                url='existingdams',
+                controller='lowheaddaminventory.controllers.existingdams'
+            ),
         )
 
         return url_maps
+
