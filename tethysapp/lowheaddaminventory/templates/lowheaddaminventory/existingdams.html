@@ -1,6 +1,7 @@
 {% extends "lowheaddaminventory/base.html" %}
 {% load tethys_gizmos %}
 
+
 {% block header_buttons %}
   <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
     <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
@@ -43,11 +44,11 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiYWJoaXNoZWthbWFsMTgiLCJhIjoiY2s1eTVxNGExMmQ5MDNubjExaWY5MjdvbSJ9.3nmdjWZmUCDNyRdlPo5gbg'
 }).addTo(mymap);
 
-var Water = L.tileLayer.wms('https://geoserver.hydroshare.org/geoserver/HS-559a6476ed5d4efc9a476c84f44e0f8b/wms?', {
-layers: '',
+var Dams = L.tileLayer.wms('https://geoserver.hydroshare.org/geoserver/HS-6981bea6e9ef49fe8b42ed68832428a6/wms?', {
+layers: 'DamsGNIS_shp DamsGNIS DamsGNIS',
 format: 'image/png',
 transparent: true,
-}).addTo(map);
+}).addTo(mymap);
 
 </script>
 <body></body>
@@ -64,9 +65,7 @@ transparent: true,
           <h5 class="modal-title" id="help-modal-label">Example Modal</h5>
         </div>
         <div class="modal-body">
-          <p>You can add custom buttons to the app header using the <code>header_buttons</code> block. Use anchor/link tags for the button and wrap it in a div with the class <code>header-button</code>. For buttons with the gliphyicons, add the <code>glyphicon-button</code> class as well.</p>
-          <p>Ever have trouble using a modal in a Tethys app? Use the <code>after_app_content</code> block for modal content to allow them to function properly. See: <a href="https://getbootstrap.com/javascript/#modals">Bootstrap Modals</a></p>
-          <p>Add tooltips to any element by adding the <code>data-toggle</code>, <code>data-placement</code>, and <code>title</code> attributes to the button. See: <a href="https://getbootstrap.com/javascript/#tooltips">Bootstrap Tooltips</a></p>
+          <p> Proceed to the instructions tab on the left side of the page if you have questions.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

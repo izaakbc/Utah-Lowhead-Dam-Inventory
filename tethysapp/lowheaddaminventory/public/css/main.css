@@ -10,6 +10,9 @@ h2{
     text-align: center;
 }
 
+.sidebar{
+    will-change: transform;
+}
 
 #pic{
     text-align: center;
